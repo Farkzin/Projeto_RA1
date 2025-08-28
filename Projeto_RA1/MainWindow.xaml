@@ -8,5 +8,7 @@
         Title="MainWindow" Height="450" Width="450">
     <Grid>
         <Label Content="VINICIUS VIADO" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <CheckBox Content="SIM" HorizontalAlignment="Center" Margin="0,380,0,0"/>
+        <CheckBox Content="NAO" HorizontalAlignment="Center" Margin="6,400,0,0"/>
     </Grid>
 </Window>
