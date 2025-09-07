@@ -11,8 +11,8 @@
   <ItemGroup>
     <Folder Include="backend\" />
     <Folder Include="docs\" />
-    <Folder Include="tests\" />
     <Folder Include="shared_memory\" />
+    <Folder Include="tests\" />
     <Folder Include="sockets\" />
     <Folder Include="pipes\" />
   </ItemGroup>
