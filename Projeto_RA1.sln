@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemReader", "MemReader\MemR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemIPC", "MemIPC\MemIPC.csproj", "{49C20436-FB7C-4A3F-A38D-01427AC96F30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sockets", "Sockets\Sockets.csproj", "{0AB4A804-4866-4D15-8665-0B1CFD633172}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketServer", "Sockets\SocketServer.csproj", "{0AB4A804-4866-4D15-8665-0B1CFD633172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
