@@ -55,10 +55,10 @@ class Reader
 
                     // Copia array da memória pro buffer.
                     reader.ReadArray(
-                        0,                // 
-                        buffer,           // 
-                        0,                // 
-                        MemIPC.NumChars   // 
+                        0,                // Posição inicial dentro da memória compartilhada
+                        buffer,           // O array que será gravado 
+                        0,                // Posição inicial dentro do array 
+                        MemIPC.NumChars   // Quantidade de chars que serão copiados
                         );
 
                     var mensagem = new string(buffer).TrimEnd('\0'); // COnverte o buffer em string removendo '\0' do final
