@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketServer", "Sockets\Soc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClient", "SocketClient\SocketClient.csproj", "{5D86004A-15E4-430C-B7D1-C7943BFBD39E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeReader", "PipeReader\PipeReader.csproj", "{0955CE58-FE57-452C-9B80-1918A6B69736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeWriter", "PipeWriter\PipeWriter.csproj", "{843F7C1C-E460-4546-B2FF-864BFC255BED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5D86004A-15E4-430C-B7D1-C7943BFBD39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D86004A-15E4-430C-B7D1-C7943BFBD39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D86004A-15E4-430C-B7D1-C7943BFBD39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0955CE58-FE57-452C-9B80-1918A6B69736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0955CE58-FE57-452C-9B80-1918A6B69736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0955CE58-FE57-452C-9B80-1918A6B69736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0955CE58-FE57-452C-9B80-1918A6B69736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843F7C1C-E460-4546-B2FF-864BFC255BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843F7C1C-E460-4546-B2FF-864BFC255BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843F7C1C-E460-4546-B2FF-864BFC255BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843F7C1C-E460-4546-B2FF-864BFC255BED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

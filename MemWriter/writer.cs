@@ -20,12 +20,13 @@ class Writer
             MemIPC.NomeMutex   // Nome do mutex
             );
 
-        Console.WriteLine("Iniciando escrita... \nDigite sua  mensagem e use 'sair' para encerrar.");
+        Console.WriteLine("Iniciando escrita..."); 
 
         // Laço para escrita de mensagens. Termina quando o usuário digitar 'sair'.
         while (true)
         {
-            Console.Write("-> ");
+            Console.WriteLine("Iniciando escrita... \nDigite suas mensagens (ou 'sair' para encerrar).");
+            Console.Write("> ");
             string mensagem = Console.ReadLine() ?? "";
 
             mutex.WaitOne(); // Trava o mutex e garante que apenas este processo irá acessar a memória.
