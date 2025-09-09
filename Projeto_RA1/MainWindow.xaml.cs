@@ -128,17 +128,14 @@ namespace Projeto_RA1
             {
                 try { if (!p.HasExited) await p.StandardInput.WriteLineAsync("sair"); } catch { }
             }
-            await Task.Delay(1200);
-            foreach (var p in procs)
-            {
-                try { if (!p.HasExited) p.Kill(entireProcessTree: true); } catch { }
-                try { p.Dispose(); } catch { }
-            }
+            await Task.Delay(1200); foreach (var p in procs) { 
+                try { if (!p.HasExited) p.Kill(entireProcessTree: true); } catch { } 
+                try { p.Dispose(); } catch { } }
             procs.Clear(); senderProc = null;
-            UpdateStatus();
+            UpdateStatus(); 
             AppendLog("[ui] stopped");
         }
-
+      
         async void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             if (senderProc is null || senderProc.HasExited) return;
