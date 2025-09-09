@@ -59,6 +59,7 @@ namespace Projeto_RA1
             SetState(IpcState.Parado);
             SetIOEnabled(false);   // caixa e botão OFF no início
             UpdateButtons();
+            UpdateLocks();
         }
 
         void InitVisual()
@@ -279,6 +280,7 @@ namespace Projeto_RA1
             StatusText.Text = anyRunning ? "Rodando" : "Parado";
             UpdateButtons();
             SetIOEnabled(anyRunning);
+            UpdateLocks();
         }
 
         // ===== UI Handlers =====
@@ -288,6 +290,7 @@ namespace Projeto_RA1
             SetIOEnabled(false);           // evita envio antes de subir
             BtnStart.IsEnabled = false;    // trava duplo clique
             BtnStop.IsEnabled = true;
+            IpcSelector.IsEnabled = false;  // evita troca durante conexão
 
             LogList.Items.Clear();
             OnStartVisual();
@@ -355,6 +358,7 @@ namespace Projeto_RA1
             UpdateStatus();   // Start ON, Stop OFF, IO OFF
             AppendLog("[ui] stopped");
             OnStopVisual();
+            UpdateLocks();  // reabilita ComboBox ao parar
         }
 
         async void BtnSend_Click(object sender, RoutedEventArgs e)
@@ -384,6 +388,15 @@ namespace Projeto_RA1
         {
             MsgInput.IsEnabled = on;
             BtnSend.IsEnabled = on;
+        
         }
+        void UpdateLocks()
+        {
+            bool running = AnyRunning(procs);
+            IpcSelector.IsEnabled = !running;         // trava ComboBox quando conectado
+                                                      // Se quiser apenas bloquear clique sem “cinza”:
+                                                      // IpcSelector.IsHitTestVisible = !running;
+        }
+
     }
 }
