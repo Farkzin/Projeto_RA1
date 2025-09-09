@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SocketClient
 {
-    class Program
+    class writer
     {
         static void Main(string[] args)
         {
@@ -18,34 +18,35 @@ namespace SocketClient
             try
             {
                 client = new TcpClient();
+                Console.WriteLine("[SocketWriter] Cliente iniciado.");
                 client.Connect(IPAddress.Parse(ip), port);
-                Console.WriteLine("Cliente iniciado e conectado ao servidor.");
+                Console.WriteLine("[SocketWriter] Cliente conectado ao servidor.");
 
                 stream = client.GetStream();
                 byte[] buffer = new byte[512];
-
-                Console.WriteLine("Digite uma mensagem para enviar ao servidor:");
                 string msg;
 
                 while ((msg = Console.ReadLine()) != null)
                 {
+                    if (msg == "sair") break;
+
                     byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
                     stream.Write(msgBytes, 0, msgBytes.Length);
-                    Console.WriteLine("Mensagem enviada: " + msg);
+                    Console.WriteLine("[SocketWriter] Mensagem enviada: " + msg);
 
                     int bytesRead = stream.Read(buffer, 0, buffer.Length);
                     if (bytesRead > 0)
                     {
                         string resposta = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                        Console.WriteLine("Mensagem recebida: " + resposta);
+                        Console.WriteLine("[SocketWriter] Mensagem recebida: " + resposta);
                     }
                     else
                     {
-                        Console.WriteLine("Servidor desconectado.");
+                        Console.WriteLine("[SocketWriter] Servidor desconectado.");
                         break;
                     }
 
-                    Console.WriteLine("Digite uma mensagem para enviar ao servidor:");
+                    Console.WriteLine("[SocketWriter] Digite uma mensagem para enviar ao servidor:");
                 }
             }
             catch (Exception ex)

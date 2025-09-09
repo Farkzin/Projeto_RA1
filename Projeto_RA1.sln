@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemWriter", "MemWriter\MemW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemReader", "MemReader\MemReader.csproj", "{540A202F-DE5C-4A65-9233-E80FA60E7EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketServer", "Sockets\SocketServer.csproj", "{0AB4A804-4866-4D15-8665-0B1CFD633172}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketReader", "Sockets\SocketReader.csproj", "{0AB4A804-4866-4D15-8665-0B1CFD633172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClient", "SocketClient\SocketClient.csproj", "{5D86004A-15E4-430C-B7D1-C7943BFBD39E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketWriter", "SocketClient\SocketWriter.csproj", "{5D86004A-15E4-430C-B7D1-C7943BFBD39E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeReader", "PipeReader\PipeReader.csproj", "{0955CE58-FE57-452C-9B80-1918A6B69736}"
 EndProject

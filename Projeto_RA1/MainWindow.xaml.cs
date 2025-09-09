@@ -20,7 +20,6 @@ namespace Projeto_RA1
             var dir = new System.IO.DirectoryInfo(AppContext.BaseDirectory);
 
             // Sobe até 8 níveis procurando pela pasta "dist"
-            for (int i = 0; i < 8 && dir != null; i++)
             {
                 var candidate = System.IO.Path.Combine(dir.FullName, "dist");
                 if (System.IO.Directory.Exists(candidate))
