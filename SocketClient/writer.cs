@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -9,58 +8,32 @@ namespace SocketClient
     {
         static void Main(string[] args)
         {
-            int port = 12345;
-            string ip = "127.0.0.1";
+            Console.OutputEncoding = Encoding.UTF8;
 
-            TcpClient client = null;
-            NetworkStream stream = null;
+            using var client = new TcpClient("127.0.0.1", 12345);
+            using var stream = client.GetStream();
+            stream.ReadTimeout = 200;            // evita bloqueio
+            var rx = new byte[1024];
 
-            try
+            while (true)
             {
-                client = new TcpClient();
-                Console.WriteLine("[SocketWriter] Cliente iniciado.");
-                client.Connect(IPAddress.Parse(ip), port);
-                Console.WriteLine("[SocketWriter] Cliente conectado ao servidor.");
+                var line = Console.ReadLine();   // recebido do WPF
+                if (line == null) break;
 
-                stream = client.GetStream();
-                byte[] buffer = new byte[512];
-                
+                var tx = Encoding.UTF8.GetBytes(line);
+                stream.Write(tx, 0, tx.Length);
+                Console.WriteLine("Mensagem enviada: " + line);
 
-                while (true)
+                if (line.Equals("sair", StringComparison.OrdinalIgnoreCase))
+                    break;                       // NÃO ler resposta, apenas sair
+
+                try
                 {
-                    string msg = Console.ReadLine();
-                    if (msg == "sair") break;
-
-                    byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
-                    stream.Write(msgBytes, 0, msgBytes.Length);
-                    Console.WriteLine("[SocketWriter] Mensagem enviada: " + msg);
-
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
-                    if (bytesRead > 0)
-                    {
-                        string resposta = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                        Console.WriteLine("[SocketWriter] Mensagem recebida: " + resposta);
-                    }
-                    else
-                    {
-                        Console.WriteLine("[SocketWriter] Servidor desconectado.");
-                        break;
-                    }
-
-                    Console.WriteLine("[SocketWriter] Digite uma mensagem para enviar ao servidor:");
+                    int n = stream.Read(rx, 0, rx.Length);
+                    if (n > 0)
+                        Console.WriteLine("Mensagem recebida: " + Encoding.UTF8.GetString(rx, 0, n));
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro: " + ex.Message);
-            }
-            finally
-            {
-                if (stream != null)
-                    stream.Close();
-                if (client != null)
-                    client.Close();
-                Console.WriteLine("Cliente desligado.");
+                catch (IOException) { /* timeout, segue o loop */ }
             }
         }
     }

@@ -17,7 +17,7 @@ class Reader
         }
 
         // Se não abriu após 50 tentativas, encerra o programa com erro.
-        if (mmf == null) { Console.WriteLine("Erro ao abrir memória após 50 tentativas."); return; }
+        if (mmf == null) { Console.WriteLine("[SharedMemoryReader] Erro ao abrir memória após 50 tentativas."); return; }
 
         tentativas = 0; // Reinicia o contador de tenttivas
 
@@ -29,7 +29,7 @@ class Reader
         }
 
         // Se não abriu após 50 tentativas, encerra o programa com erro.
-        if (mutex == null) { Console.WriteLine("Erro ao abrir mutex após 50 tentativas."); return; }
+        if (mutex == null) { Console.WriteLine("[SharedMemoryReader] Erro ao abrir mutex após 50 tentativas."); return; }
 
         using (mmf)    // using (mmf) e using (mutex) garantem que, ao sair desse bloco,
         using (mutex)  // os objetos serão liberados autoamticamente pelo C#
@@ -45,7 +45,7 @@ class Reader
                     byte exit = reader.ReadByte(MemIPC.ExitFlag); // Lê a flag de saída, na posição 512
                     if (exit == 1)  // Se a flag = 1, o escritor sinalizou para encerrar
                     {
-                        Console.WriteLine("Escritor finalizado. Encerrando leitor.");
+                        Console.WriteLine("[SharedMemoryReader] Escritor finalizado. Encerrando leitor.");
                         mutex.ReleaseMutex();  // Libera o mutexantes de sair
                         break;
                     }
@@ -66,7 +66,7 @@ class Reader
                     // Só imprime se a mensagem não for nula ou vazia, evita que a mensagem seja lida e impressa em loop infinito.
                     if (!string.IsNullOrEmpty(mensagem))
                     {
-                        Console.WriteLine($"Mensagem lida: {mensagem}");
+                        Console.WriteLine($"[SharedMemoryReader] Mensagem lida: {mensagem}");
 
                         // Limpa mensagem no buffer.
                         Array.Clear(
