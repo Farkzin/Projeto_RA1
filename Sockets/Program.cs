@@ -25,7 +25,7 @@ namespace SocketServer
                 servidor = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 servidor.Start(); // Inicia o servidor
                 JsonLog("servidor_começado", "Socket criado");
-                JsonLog("porta_vinculada", "127.0.0.1:12345");
+                JsonLog("porta_vinculada");
                 JsonLog("aguardando_conexao");
 
                 // Aguarda até que um cliente se conecte

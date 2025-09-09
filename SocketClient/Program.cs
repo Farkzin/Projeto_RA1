@@ -27,20 +27,18 @@ namespace SocketClient
                 client = new TcpClient();
                 client.Connect(IPAddress.Parse(ip), port);
                 JsonLog("cliente_iniciado");
-                JsonLog("conectado_ao_servidor", "127.0.0.1:12345");
+                JsonLog("conectado_ao_servidor");
 
                 // Obtém o fluxo de dados da conexão
                 stream = client.GetStream();
                 byte[] buffer = new byte[512]; // Buffer para receber mensagens
 
-                Console.WriteLine("Digite uma mensagem para enviar ao servidor (ou 'sair'):");
+                Console.WriteLine("Digite uma mensagem para enviar ao servidor:");
                 string msg;
 
                 // Loop para enviar mensagens até digitar "sair"
                 while ((msg = Console.ReadLine()) != null)
                 {
-                    if (msg == "sair") break; // Sai do loop se o usuário digitar "sair"
-
                     // Converte a mensagem em bytes e envia ao servidor
                     byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
                     stream.Write(msgBytes, 0, msgBytes.Length);
@@ -61,7 +59,7 @@ namespace SocketClient
                         break;
                     }
 
-                    Console.WriteLine("Digite uma mensagem para enviar ao servidor (ou 'sair'):");
+                    Console.WriteLine("Digite uma mensagem para enviar ao servidor:");
                 }
             }
             catch (Exception ex)
