@@ -24,10 +24,11 @@ namespace SocketClient
 
                 stream = client.GetStream();
                 byte[] buffer = new byte[512];
-                string msg;
+                
 
-                while ((msg = Console.ReadLine()) != null)
+                while (true)
                 {
+                    string msg = Console.ReadLine();
                     if (msg == "sair") break;
 
                     byte[] msgBytes = Encoding.UTF8.GetBytes(msg);

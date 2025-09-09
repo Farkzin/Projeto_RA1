@@ -18,21 +18,24 @@ namespace Projeto_RA1
         private string FindDistDir()
         {
             var dir = new System.IO.DirectoryInfo(AppContext.BaseDirectory);
-
-            // Sobe até 8 níveis procurando pela pasta "dist"
+            for (int i = 0; i < 8 && dir != null; i++, dir = dir.Parent!)
             {
                 var candidate = System.IO.Path.Combine(dir.FullName, "dist");
-                if (System.IO.Directory.Exists(candidate))
-                    return candidate;
 
-                dir = dir.Parent!;
+                bool looksRight =
+                    System.IO.Directory.Exists(System.IO.Path.Combine(candidate, "Pipes")) ||
+                    System.IO.Directory.Exists(System.IO.Path.Combine(candidate, "SharedMemory")) ||
+                    System.IO.Directory.Exists(System.IO.Path.Combine(candidate, "Sockets"));
+
+                if (looksRight) return candidate;
             }
 
-            // fallback: cria dist local se não encontrar
+            // fallback local
             var fallback = System.IO.Path.Combine(AppContext.BaseDirectory, "dist");
             System.IO.Directory.CreateDirectory(fallback);
             return fallback;
         }
+
 
         public MainWindow()
         {

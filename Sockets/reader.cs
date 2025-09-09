@@ -28,15 +28,9 @@ namespace SocketServer
 
                 int bytesRead;
                 while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
-                {
+                {                   
                     string mensagem = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                     Console.WriteLine("[SocketReader] Mensagem recebida: " + mensagem);
-
-                    string reply = "Eco: " + mensagem;
-                    byte[] replyBytes = Encoding.UTF8.GetBytes(reply);
-
-                    stream.Write(replyBytes, 0, replyBytes.Length);
-                    Console.WriteLine("[SocketReader] Mensagem enviada: " + reply);
                 }
 
                 Console.WriteLine("[SocketReader] Cliente desconectado.");

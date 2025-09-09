@@ -5,8 +5,8 @@ class Reader
     static void Main()
     {
         // Declara variáveis para a memória e mutex incialmente nulas para realizar tentativas de abertura de objetos.
-        MemoryMappedFile mmf = null;
-        Mutex mutex = null;
+        MemoryMappedFile? mmf = null;
+        Mutex? mutex = null;
         int tentativas = 0;   // Contador de tentativas
 
         // Laço para tentar abrir memória compartilhada, máximo de 50 tentativas.
