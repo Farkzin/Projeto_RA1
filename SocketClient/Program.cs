@@ -24,8 +24,8 @@ namespace SocketClient
             {
                 client = new TcpClient();
                 client.Connect(IPAddress.Parse(ip), port);
-                JsonLog("client_started");
-                JsonLog("connected_to_server", "127.0.0.1:12345");
+                JsonLog("cliente_iniciado");
+                JsonLog("conectado_ao_servidor", "127.0.0.1:12345");
 
                 stream = client.GetStream();
                 byte[] buffer = new byte[512];
@@ -38,17 +38,17 @@ namespace SocketClient
 
                     byte[] msgBytes = Encoding.UTF8.GetBytes(msg);
                     stream.Write(msgBytes, 0, msgBytes.Length);
-                    JsonLog("message_sent", msg);
+                    JsonLog("mensagem_enviada", msg);
 
                     int bytesRead = stream.Read(buffer, 0, buffer.Length);
                     if (bytesRead > 0)
                     {
                         string resposta = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                        JsonLog("message_received", resposta);
+                        JsonLog("mensagem_recebida", resposta);
                     }
                     else
                     {
-                        JsonLog("server_disconnected");
+                        JsonLog("servidor_desconectado");
                         break;
                     }
                     Console.WriteLine("Digite uma mensagem para enviar ao servidor (ou 'sair'):");
@@ -64,7 +64,7 @@ namespace SocketClient
                     stream.Close();
                 if (client != null)
                     client.Close();
-                JsonLog("client_shutdown");
+                JsonLog("cliente_desligado");
             }
         }
     }

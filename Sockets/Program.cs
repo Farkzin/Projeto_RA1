@@ -22,12 +22,12 @@ namespace SocketServer
             {
                 servidor = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 servidor.Start();
-                JsonLog("server_started", "Socket criado");
-                JsonLog("bind_success", "127.0.0.1:12345");
-                JsonLog("waiting_connection");
+                JsonLog("servidor_começado", "Socket criado");
+                JsonLog("porta_vinculada", "127.0.0.1:12345");
+                JsonLog("aguardando_conexao");
 
                 cliente = servidor.AcceptTcpClient();
-                JsonLog("client_connected");
+                JsonLog("cliente_conectado");
 
                 NetworkStream stream = cliente.GetStream();
                 byte[] buffer = new byte[512];
@@ -36,15 +36,15 @@ namespace SocketServer
                 while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     string mensagem = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    JsonLog("message_received", mensagem);
+                    JsonLog("mensagem_recebida", mensagem);
 
                     string reply = "Eco: " + mensagem;
                     byte[] replyBytes = Encoding.UTF8.GetBytes(reply);
                     stream.Write(replyBytes, 0, replyBytes.Length);
-                    JsonLog("message_sent", reply);
+                    JsonLog("mensagem_enviada", reply);
                 }
 
-                JsonLog("client_disconnected");
+                JsonLog("cliente_desconectado");
                 stream.Close();
                 cliente.Close();
             }
@@ -56,7 +56,7 @@ namespace SocketServer
             {
                 if (servidor != null)
                     servidor.Stop();
-                JsonLog("server_shutdown");
+                JsonLog("servidor_desligado");
             }
         }
     }
