@@ -9,12 +9,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="backend\" />
-    <Folder Include="docs\" />
-    <Folder Include="shared_memory\" />
-    <Folder Include="tests\" />
-    <Folder Include="sockets\" />
-    <Folder Include="pipes\" />
+    <Compile Remove="backend\**" />
+    <Compile Remove="docs\**" />
+    <Compile Remove="pipes\**" />
+    <Compile Remove="shared_memory\**" />
+    <Compile Remove="sockets\**" />
+    <Compile Remove="tests\**" />
+    <EmbeddedResource Remove="backend\**" />
+    <EmbeddedResource Remove="docs\**" />
+    <EmbeddedResource Remove="pipes\**" />
+    <EmbeddedResource Remove="shared_memory\**" />
+    <EmbeddedResource Remove="sockets\**" />
+    <EmbeddedResource Remove="tests\**" />
+    <None Remove="backend\**" />
+    <None Remove="docs\**" />
+    <None Remove="pipes\**" />
+    <None Remove="shared_memory\**" />
+    <None Remove="sockets\**" />
+    <None Remove="tests\**" />
+    <Page Remove="backend\**" />
+    <Page Remove="docs\**" />
+    <Page Remove="pipes\**" />
+    <Page Remove="shared_memory\**" />
+    <Page Remove="sockets\**" />
+    <Page Remove="tests\**" />
   </ItemGroup>
 
 </Project>
