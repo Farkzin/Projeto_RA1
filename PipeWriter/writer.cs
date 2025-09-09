@@ -13,29 +13,29 @@ class PipeWriter
             PipeTransmissionMode.Byte    // Transmissão de bytes
             ))
         {
-            Console.WriteLine("Aguardando conexão do leitor...");
+            Console.WriteLine("[PipeWriter] Aguardando conexao do leitor...");
             pipe.WaitForConnection(); // Bloqueia até que um cliente (leitor) se conecte
-            Console.WriteLine("Leitor conectado.");
+            Console.WriteLine("[PipeWriter] Leitor conectado.");
 
-            Console.WriteLine("\nIniciando escrita...");
+            Console.WriteLine("[PipeWriter] Iniciando escrita...");
 
             // Laço para ficar enviando mensagens até digitar "sair"
             while (true)
             {
-                Console.Write("\nDigite suas mensagens (ou 'sair' para encerrar).");
-                Console.Write("\n> ");
                 string mensagem = Console.ReadLine();
 
                 // Se digitar "sair" finaliza o laço e o programa
                 if (mensagem == "sair") break;
 
                 byte[] buffer = Encoding.UTF8.GetBytes(mensagem); // Converte a string em array de bytes
-                pipe.Write(  // Envia os bytes para o leitor
+                pipe.Write(        // Envia os bytes para o leitor
                     buffer,        // Array com os dados a serem enviados
                     0,             // Posição inicial no array, começar a enviar os dados pelo início do array
                     buffer.Length  // Número total de bytes a serem enviados
                     );
                 pipe.Flush(); // Os dados são enviados imediatamente ao leitor
+
+                Console.WriteLine($"[PipeWriter] Mensagem escrita: {mensagem}");
             }
         }
     }

@@ -20,13 +20,11 @@ class Writer
             MemIPC.NomeMutex   // Nome do mutex
             );
 
-        Console.WriteLine("Iniciando escrita..."); 
+        Console.WriteLine("[SharedMemoryWriter] Iniciando escrita..."); 
 
         // Laço para escrita de mensagens. Termina quando o usuário digitar 'sair'.
         while (true)
         {
-            Console.WriteLine("Iniciando escrita... \nDigite suas mensagens (ou 'sair' para encerrar).");
-            Console.Write("> ");
             string mensagem = Console.ReadLine() ?? "";
 
             mutex.WaitOne(); // Trava o mutex e garante que apenas este processo irá acessar a memória.
@@ -66,7 +64,7 @@ class Writer
                     (byte)0          // Valor a ser escrito, aqui um byte de valor 0
                     );
 
-                Console.WriteLine($"Mensagem escrita: {mensagem}");
+                Console.WriteLine($"[SharedMemoryWriter] Mensagem escrita: {mensagem}");
             }
             mutex.ReleaseMutex(); // Libera o mutex, permitindo que o leitor acesse a memória
         }

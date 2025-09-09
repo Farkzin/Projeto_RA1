@@ -12,9 +12,9 @@ class PipeReader
             PipeDirection.In        // Este cliente só vai ler dados do pipe
             ))
         {
-            Console.WriteLine("Conectando ao escritor...");
+            Console.WriteLine("[PipeReader] Conectando ao escritor...");
             pipe.Connect(); // Tenta se conectar ao servidor (escritor). Fica bloqueado até o escritor abrir o pipe
-            Console.WriteLine("Escritor conectado.\n");
+            Console.WriteLine("[PipeReader] Escritor conectado.");
 
             byte[] buffer = new byte[PipeConfig.TamBuffer];  // Cria um buffer de tamanho fixo para armazenar o que for recebido
             int bytesLidos;  // Vai guardar a quantidade de bytes lidos cada vez
@@ -33,7 +33,7 @@ class PipeReader
                     bytesLidos   // Quantidade de bytes para converter
                     ); 
 
-                Console.WriteLine("Mensagem recebida: " + mensagem);
+                Console.WriteLine("[PipeReader] Mensagem recebida: " + mensagem);
             }
         }
     }

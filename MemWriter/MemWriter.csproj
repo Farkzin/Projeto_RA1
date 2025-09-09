@@ -7,4 +7,7 @@
 		<OutputPath>$(SolutionDir)dist\</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\ShMemConfig\MemConfig.csproj" />
+	</ItemGroup>
 </Project>
