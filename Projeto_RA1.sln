@@ -31,6 +31,45 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemConfig", "ShMemConfig\Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeConfig", "PipeConfig\PipeConfig.csproj", "{F5618475-91A5-4890-B6D9-27801F9A40BE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A4AD5D11-42BF-4904-BA40-3FD8C38906FB}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\BD-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\ER-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-04.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-04.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-05.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\PI-05.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\README.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\README.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-04.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-04.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-05.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-05.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-06.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-06.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-07.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SM-07.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-04.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-04.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-05.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\SO-05.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-01.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-01.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-02.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-02.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-03.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-03.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-04.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-04.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-05.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-05.md
+		..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-06.md = ..\..\..\Downloads\TestesObrigatorios_Projeto_RA1\Projeto_RA1_TestesObrigatorios\tests\relatorios\UI-06.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8339FAB4-1AC0-4DDF-9B9B-AA782756CD62}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\README.md = ..\..\..\Downloads\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
